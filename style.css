@@ -1,0 +1,61 @@
+* {
+	border:0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-size: calc(48px + 24 * (100vw - 320px)/(1280 -320));
+}
+
+body, form {
+	display: flex;
+}
+body {
+	--l1: hsl(228,9.8%,100%);
+	--l2: hsl(228,9.8%,90%);
+	--l3: hsl(228,9.8%,63%);
+	--p: hsl(120,90.4%,44.9%);
+	--pT: hsl(120,90.4%,44.9%,0);
+	background-color: var(--l2);
+	height: 100vh;
+}
+form, input[type=range] {
+	margin:auto;
+}
+form {
+	height: 6em;
+}
+input[type=range] {
+	cursor: pointer;
+	height: 1.5em;
+	width: 6em;
+	box-shadow: -0.1em -0.1em 0.1em var(--l3) inset,
+				 0.1em 0.1em 0.1em var(--l1) inset;
+	appearance:none;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	background-color: transparent;
+	border-radius: 0.75em;
+}
+
+input[type=range]::-webkit-slider-thumb {
+	border:0;
+	background: linear-gradient(var(--p),
+				var(--p)) 70% 50%/20% 5% no-repeat,
+				linear-gradient(var(--l2),
+				var(--l2)) 70% 50%/20% 15% no-repeat,
+				radial-gradient(100% 100% at 50% 50%,
+				var(--pT) 14%, var(--p) 15% 19%,
+				var(--pT) 20%),
+				var(--l2);
+	border-radius: 50%;
+	width: 1.5em;
+	height: 1.5em;
+	box-shadow: -0.25em 0 0.5em var(--l3),
+				 0.25em 0 0.5em var(--l1);
+	appearance:none;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+}
+input[type=range]:focus {
+	outline: transparent;
+} 
